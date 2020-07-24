@@ -12,8 +12,8 @@ def client():
     print("status code:", response.status_code)
     response_data = response.json()
     print(response_data)
-    # for profile in response_data:
-    #     print(f"{profile['id']} -----> {profile['user']}")
+    for profile in response_data:
+        print(f"{profile['id']} -----> {profile['user']}")
 
 if __name__ == "__main__":
     client()
