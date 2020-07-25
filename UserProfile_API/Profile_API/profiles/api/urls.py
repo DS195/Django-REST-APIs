@@ -1,13 +1,15 @@
 from django.urls import path, include
-from .views import ProfileViewSet
+from .views import ProfileViewSet, ProfileStatusViewSet, AvatarUpadateView
 from rest_framework.routers import DefaultRouter
 
 # using the router we can create diffent endpoint very easily.
 router = DefaultRouter()
-router.register(r"profiles", ProfileViewSet)
+router.register(r"profiles", ProfileViewSet) 
+router.register(r"status", ProfileStatusViewSet)
 
 urlpatterns = [
-    path("", include(router.urls))
+    path("", include(router.urls)),
+    path("avatar/", AvatarUpadateView.as_view(), name = "avatar_update")
 ]
 
 

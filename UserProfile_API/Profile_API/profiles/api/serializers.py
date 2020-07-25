@@ -17,7 +17,7 @@ class ProfileAvatarSerializer(serializers.ModelSerializer):
         model = Profile
         fields = ("avatar",)
 
-class ProfileStatusSerializers(serializers.Serializer):
+class ProfileStatusSerializers(serializers.ModelSerializer):
 
     user_profile = serializers.StringRelatedField(read_only=True)
 
