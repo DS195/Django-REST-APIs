@@ -5,7 +5,7 @@ from rest_framework.routers import DefaultRouter
 # using the router we can create diffent endpoint very easily.
 router = DefaultRouter()
 router.register(r"profiles", ProfileViewSet) 
-router.register(r"status", ProfileStatusViewSet)
+router.register(r"status", ProfileStatusViewSet, basename="status")
 
 urlpatterns = [
     path("", include(router.urls)),
